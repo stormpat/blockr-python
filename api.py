@@ -33,11 +33,32 @@ class Api(ApiService):
         res = requests.get(self.build_url() + self.block_tx + str(block))
         return self.execute(res)
 
-    # Transaction API
+    def block_transaction_raw(self, block):
+        ''' Add docblocks todo '''
+        res = requests.get(self.build_url() + self.block_raw + str(block))
+        return self.execute(res)
 
-    # Unconfirmed transaction API
+    # Transaction API
+    def transaction(self, transaction):
+        ''' Add docblocks todo '''
+        res = requests.get(self.build_url() + self.tx_info + str(transaction))
+        return self.execute(res)
+
+    def unconfirmed_transaction(self, transaction):
+        ''' Add docblocks todo '''
+        res = requests.get(self.build_url() + self.tx_unconf + str(transaction))
+        return self.execute(res)
 
     # Address API
+    def address(self, address, confirmations=0):
+        ''' Add docblocks todo '''
+        confs = {'confirmations': confirmations}
+        if confs['confirmations'] > 0:
+            res = requests.get(self.build_url() + self.addr + str(address),
+                                                              params=confs)
+        else:
+            res = requests.get(self.build_url() + self.addr + str(address))
+        return self.execute(res)
 
 api = Api('bitcoin', 'text')
-print api.block_transaction('last')
+print api.address('1Hjnv2sKurWq8Y4qDJa3BhrtZD1ohrrNQg')
