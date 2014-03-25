@@ -4,7 +4,7 @@ A Python Docstring. Todo
 
 class ApiService(object):
     '''
-    Docstring. Documentation todo
+    Docstring. Documentation todo.
     '''
     currency = None
     data = None
