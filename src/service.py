@@ -1,5 +1,5 @@
-"""This module contains the fundamental parts of the API wrapper. The class job is to bootstrap
-the app with the correct URIs for the Blockr API."""
+"""This module contains the fundamental parts of the API wrapper. The class job
+is to bootstrap the app with the correct URIs for the Blockr API."""
 
 class ApiService(object):
     """ The API service class, provies the backbone for the Api. """
@@ -20,6 +20,7 @@ class ApiService(object):
     balance = 'address/balance/'
     address_tx = 'address/txs/'
     address_unspent = 'address/unspent/'
+    address_unconfirmed = 'address/unconfirmed/'
     currencies = ['litecoin', 'bitcoin', 'digitalcoin',
                   'quarkcoin', 'peercoin', 'megacoin']
 
@@ -29,8 +30,8 @@ class ApiService(object):
         if currency in self.currencies:
             self.build_url()
         else: raise Exception(
-                """Only {1} are supported.
-                   The currency: "{0}" not allowed""".format(self.currency, self.currencies))
+                """Only {1} are supported. The currency: "{0}" not allowed"""
+                   .format(self.currency, self.currencies))
 
     def build_url(self):
         """ Build the url according the users currency, and API version."""
@@ -55,7 +56,7 @@ class ApiService(object):
         return 'http://{0}{1}{2}'.format(self.base, self.url, self.version)
 
     def execute(self, req):
-        ''' The main caller method. All HTTP requests are passed via this method. '''
+        """ The main caller method. HTTP reqs are passed via this method. """
         if self.data == 'json':
             return req.json()
         if self.data == 'text':
