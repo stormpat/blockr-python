@@ -71,7 +71,7 @@ Get the current exchange rate. All exchange rates are based on the USD.
 
 ```python
 # Get exchange rate
-exchange = coin.echange_rate()
+exchange = coin.exchange_rate()
 ```
 
 *TODO - BUILD FORMATTER METHODS IN CORE API*
@@ -83,13 +83,13 @@ same time.
 
 The variable passed in to the block pai function can be of:
 
-- A block number (eg: 223212)
-- A block hash (eg: 0000000000000000210b10d620600dc1cc2380bb58eb2408f9767eb792ed31fa)
-- A word "last" - this will always return the latest block
+- A block number (eg: ```223212```)
+- A block hash (eg: ```0000000000000000210b10d620600dc1cc2380bb58eb2408f9767eb792ed31fa```)
+- A word ```"last"``` - this will always return the latest block
 
 ```python
 # Get info about a specific
-block = coin.block_info(block)
+block_id = coin.block_info(block)
 
 # Get info about the blocks transactions
 block_tx = coin.block_transaction(block)
@@ -100,6 +100,14 @@ block_tx_raw = coin.block_transaction_raw(block)
 
 
 #### Transaction API
+
+
+```python
+
+tx = transaction(transaction)
+
+```
+
 
 #### Address API
 
