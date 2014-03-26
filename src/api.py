@@ -2,7 +2,8 @@
 Hello
 """
 import requests
-from src.service import ApiService
+import itertools
+from service import ApiService
 
 class Api(ApiService):
 
@@ -50,15 +51,30 @@ class Api(ApiService):
         return self.execute(res)
 
     # Address API
-    def address(self, address, confirmations=0):
+    def address(self, address={}, confirmations=0):
         ''' Add docblocks todo '''
+
         confs = {'confirmations': confirmations}
         if confs['confirmations'] > 0:
             res = requests.get(self.build_url() + self.addr + str(address),
                                                               params=confs)
         else:
             res = requests.get(self.build_url() + self.addr + str(address))
+        print res.url
         return self.execute(res)
 
+
+
+    def address_balance(self, address, confirmations=0):
+        ''' Add docblocks todo '''
+        confs = {'confirmations': confirmations}
+        if confs['confirmations'] > 0:
+            res = requests.get(self.build_url() + self.balance + str(address),
+                                                             params=confs)
+        else:
+            res = requests.get(self.build_url() + self.balance + str(address))
+        return self.execute(res)
+
+
 api = Api('bitcoin', 'text')
-print api.address('1Hjnv2sKurWq8Y4qDJa3BhrtZD1ohrrNQg')
+print api.address('1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', '198aMn6ZYAczwrE5NvNTUMyJ5qkfy4g3Hi')

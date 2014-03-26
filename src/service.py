@@ -1,17 +1,13 @@
-"""
-A Python Docstring. Todo
-"""
+"""This module contains the fundamental parts of the API wrapper. The class job is to bootstrap
+the app with the correct URIs for the Blockr API."""
 
 class ApiService(object):
-    '''
-    Docstring. Documentation todo...
-    '''
+    """ The API service class, provies the backbone for the Api. """
     currency = None
     data = None
     base = None
     url = 'blockr.io/'
     version = 'api/v1/'
-    confirmations = '?confirmations='
     coin = 'coin/info/'
     block = 'block/info/'
     block_tx = 'block/txs/'
@@ -28,20 +24,16 @@ class ApiService(object):
                   'quarkcoin', 'peercoin', 'megacoin']
 
     def __init__(self, currency):
+        """ Set the user currency, and check if its allowed."""
         self.currency = currency = currency.lower()
         if currency in self.currencies:
             self.build_url()
         else: raise Exception(
-                '''
-                Only Bitcoin, Litecoin and Digitalcoin are supported.
-                The currency: "{0}" not allowed
-                '''
-                .format(self.currency))
+                """Only {1} are supported.
+                   The currency: "{0}" not allowed""".format(self.currency, self.currencies))
 
     def build_url(self):
-        '''
-        Docstring. Documentation todo
-        '''
+        """ Build the url according the users currency, and API version."""
         if self.currency == 'bitcoin':
             self.base = ''
 
@@ -63,7 +55,7 @@ class ApiService(object):
         return 'http://{0}{1}{2}'.format(self.base, self.url, self.version)
 
     def execute(self, req):
-        ''' Add docblocks todo '''
+        ''' The main caller method. All HTTP requests are passed via this method. '''
         if self.data == 'json':
             return req.json()
         if self.data == 'text':
