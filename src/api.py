@@ -94,4 +94,4 @@ class Api(ApiService):
 
 
 api = Api('bitcoin', 'text')
-print api.address_transactions_unconfirmed('198aMn6ZYAczwrE5NvNTUMyJ5qkfy4g3Hi')
+print api.exchange_rate()
