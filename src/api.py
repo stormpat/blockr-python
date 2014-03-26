@@ -55,17 +55,13 @@ class Api(ApiService):
         return self.execute(res)
 
     # Address API
-    # api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk')
-    # api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', 10)
-    # api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', '198aMn6ZYAczwrE5NvNTUMyJ5qkfy4g3Hi'], 10)
     def address(self, address, confirmations=0):
         """ Add docblocks todo """
         address = utils.request_type(address)
 
         confs = {'confirmations': confirmations}
         if confs['confirmations'] > 0:
-            res = r.get(self.build_url() + self.addr
-                  + str(address), params=confs)
+            res = r.get(self.build_url() + self.addr + str(address), params=confs)
         else:
             res = r.get(self.build_url() + self.addr + str(address))
         return self.execute(res)
@@ -76,8 +72,7 @@ class Api(ApiService):
 
         confs = {'confirmations': confirmations}
         if confs['confirmations'] > 0:
-            res = r.get(self.build_url() + self.balance
-                  + str(address), params=confs)
+            res = r.get(self.build_url() + self.balance + str(address), params=confs)
         else:
             res = r.get(self.build_url() + self.balance + str(address))
         return self.execute(res)

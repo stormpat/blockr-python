@@ -2,7 +2,9 @@
 
 ###Hightlights
 
-@todo
+- Support for Litecoin, Bitcoin, Digitalcoin, Quarkcoin, Peercoin, Megacoin
+- Simple and easy API, based on ```requests```
+- New currencies can be added easily. (when available on the blockr. API)
 
 ###Requirements
 
@@ -14,35 +16,27 @@
 
 ###Installation
 
-@todo
+```pip install blockr-python```
+
+(not submitted to pip yet, clone repo for now)
 
 ###Documentation
 
-@todo
+#### Coin API
 
-###Licence
+#### Exchange rates API
 
-The MIT License (MIT)
+#### Block API
 
-Copyright (c) 2014 Patrik Storm
+#### Transaction API
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+#### Address API
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+```python
+api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk')
+api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', 10)
+api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', '198aMn6ZYAczwrE5NvNTUMyJ5qkfy4g3Hi'], 10)
+```
 
 ###Read
 
