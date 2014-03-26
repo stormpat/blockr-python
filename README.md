@@ -43,10 +43,11 @@ coin = Api('Bitcoin', 'text')
 
 Almost all API calls can handle multiple parameters. For instance, if you request information about a couple of blocks, you can send one API call for all of them. Parameter delimiter is a comma.
 
-So this method reduces HTTP calls, keeping your app fast.
+So this method reduces HTTP calls, keeping your application fast.
 
-```TODO```
-ALLOW CHAINS ALL ALL METHODS
+##### TODO - ALLOW CHAINS ALL ALL METHODS
+
+
 
 #### Coin API
 
@@ -71,8 +72,8 @@ Get the current exchange rate. All exchange rates are based on the USD.
 coin.echange_rate()
 ```
 
-```TODO```
-BUILD FORMATTER METHODS IN CORE API
+##### TODO - BUILD FORMATTER METHODS IN CORE API
+
 
 
 #### Block API
