@@ -45,7 +45,7 @@ Almost all API calls can handle multiple parameters. For instance, if you reques
 
 So this method reduces HTTP calls, keeping your application fast.
 
-##### TODO - ALLOW CHAINS ALL ALL METHODS
+*TODO - ALLOW CHAINS ALL ALL METHODS*
 
 
 
@@ -53,15 +53,16 @@ So this method reduces HTTP calls, keeping your application fast.
 
 Get up-to-date information about the current currency you are working with.
 
-- ```coin``` -Basic coin information with coin name, abbreviation, logo and homepage URL.
-- ```volume``` - ```Volume information: how many coins are in supply and how many coins will there ever be.
-- ```last_block``` - Information about the last block in the longest chain.
-- ```next_difficulty``` - When will next difficulty be retargeted and how big it will probably be.
-- ```market``` - Current price value on markets.y be retargeted and how big it will probably be.
-- ```market``` - Current price value on markets.
+- ```coin``` Basic coin information with coin name, abbreviation, logo and homepage URL.
+- ```volume``` Volume information: how many coins are in supply and how many coins will there ever be.
+- ```last_block``` Information about the last block in the longest chain.
+- ```next_difficulty``` When will next difficulty be retargeted and how big it will probably be.
+- ```market``` Current price value on markets.y be retargeted and how big it will probably be.
+- ```market``` Current price value on markets.
 
 ```python
-coin.coin_info()
+# Get current info about the coin.
+info = coin.coin_info()
 ```
 
 #### Exchange rates API
@@ -69,14 +70,34 @@ coin.coin_info()
 Get the current exchange rate. All exchange rates are based on the USD.
 
 ```python
-coin.echange_rate()
+# Get exchange rate
+exchange = coin.echange_rate()
 ```
 
-##### TODO - BUILD FORMATTER METHODS IN CORE API
-
-
+*TODO - BUILD FORMATTER METHODS IN CORE API*
 
 #### Block API
+
+You can fetch information about a specific block, or multiple blocks at the
+same time.
+
+The variable passed in to the block pai function can be of:
+
+- A block number (eg: 223212)
+- A block hash (eg: 0000000000000000210b10d620600dc1cc2380bb58eb2408f9767eb792ed31fa)
+- A word "last" - this will always return the latest block
+
+```python
+# Get info about a specific
+block = coin.block_info(block)
+
+# Get info about the blocks transactions
+block_tx = coin.block_transaction(block)
+
+# Get info about the blocks transactions (in bitcoind format)
+block_tx_raw = coin.block_transaction_raw(block)
+```
+
 
 #### Transaction API
 
