@@ -91,7 +91,3 @@ class Api(ApiService):
         """ Show the addess unconfirmed transactions. """
         res = r.get(self.build_url() + self.address_unconfirmed + str(address))
         return self.execute(res)
-
-
-api = Api('bitcoin', 'text')
-print api.exchange_rate()
