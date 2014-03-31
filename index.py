@@ -1,4 +1,4 @@
-from . src import *
+from blockr.api import Api
 
-api = Api('bitcoin', 'text')
-print api.address('adfadf', 10)
+api = Api('bitcoin')
+print api.coin_info()

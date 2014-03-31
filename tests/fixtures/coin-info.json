@@ -1,0 +1,63 @@
+{
+    "status": "success",
+    "data": {
+        "coin": {
+            "name": "Bitcoin",
+            "abbr": "BTC",
+            "logo": "",
+            "homepage": ""
+        },
+        "volume": {
+            "current": 12584925,
+            "all": 21000000,
+            "perc": 59.93
+        },
+        "markets": {
+            "bitstamp": {
+                "name": "Bitstamp",
+                "last_update_utc": "2014-03-31T13:24:45Z",
+                "value": 460,
+                "currency": "USD"
+            },
+            "btce": {
+                "name": "BTC-e",
+                "last_update_utc": "2014-03-31T13:25:02Z",
+                "value": 461.418,
+                "currency": "USD"
+            },
+            "coinbase": {
+                "name": "Coinbase",
+                "last_update_utc": "2014-03-31T13:25:02Z",
+                "value": 463.68,
+                "currency": "USD"
+            },
+            "campbx": {
+                "name": "CampBX",
+                "last_update_utc": "2014-03-31T13:25:02Z",
+                "value": 465,
+                "currency": "USD"
+            },
+            "justcoin": {
+                "name": "Justcoin",
+                "last_update_utc": "2014-03-31T13:25:03Z",
+                "value": 455.643,
+                "currency": "USD"
+            }
+        },
+        "last_block": {
+            "nb": 293399,
+            "time_utc": "2014-03-31T13:28:06Z",
+            "nb_txs": 512,
+            "fee": "0.09457595",
+            "difficulty": "5006860589.205400000000000"
+        },
+        "next_difficulty": {
+            "difficulty": 5700200025.7654,
+            "retarget_in": 937,
+            "retarget_block": 294336,
+            "perc": 13.847787934315
+        }
+    },
+    "code": 200,
+    "message": ""
+}

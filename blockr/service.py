@@ -3,6 +3,7 @@ is to bootstrap the app with the correct URIs for the Blockr API."""
 
 class ApiService(object):
     """ The API service class, provies the backbone for the Api. """
+
     currency = None
     data = None
     base = None
@@ -21,8 +22,14 @@ class ApiService(object):
     address_tx = 'address/txs/'
     address_unspent = 'address/unspent/'
     address_unconfirmed = 'address/unconfirmed/'
-    currencies = ['litecoin', 'bitcoin', 'digitalcoin',
-                  'quarkcoin', 'peercoin', 'megacoin']
+    currencies = [
+        'litecoin',
+        'bitcoin',
+        'digitalcoin',
+        'quarkcoin',
+        'peercoin',
+        'megacoin'
+    ]
 
     def __init__(self, currency):
         """ Set the user currency, and check if its allowed."""
