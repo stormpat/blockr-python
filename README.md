@@ -1,5 +1,6 @@
+#BlockrPy
+
 [![Build Status](https://travis-ci.org/stormpat/blockr-python.svg?branch=master)](https://travis-ci.org/stormpat/blockr-python)
-#BlockrPY
 
 ###Hightlights
 
@@ -9,7 +10,7 @@
 
 ###Requirements
 
-@todo
+- Python 2.7 only for now.
 
 ###About
 
