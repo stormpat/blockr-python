@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/stormpat/blockr-python.svg?branch=master)](https://travis-ci.org/stormpat/blockr-python)
-
 #BlockrPY
 
 ###Hightlights
