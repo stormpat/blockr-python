@@ -11,16 +11,16 @@
 ###Requirements
 
 - Python 2.7 only for now.
+- [Requests](https://github.com/kennethreitz/requests)
 
 ###About
 
-@todo
+Easily get data from the diffrent blockchains. Support for Blocks, addresses and transactions etc.
+Exchange rate API is currently BETA, but will provide usefull helper methods.
 
 ###Installation
 
-```pip install blockr-python```
-
-(not submitted to pip yet, clone repo for now)
+Clone the repository. (This might be a pip package one day).
 
 ###Documentation
 
@@ -37,19 +37,47 @@ as an alternative. Text is formatted the was the api returns data.
 # New instance with Bitcoin as base currency.
 coin = Api('Bitcoin')
 
-# Set the return format to text.
+# Set the return format to UTF-8 (Human readable).
 coin = Api('Bitcoin', 'text')
 ```
 
 #### Keeping it fast
 
-Almost all API calls can handle multiple parameters. For instance, if you request information about a couple of blocks, you can send one API call for all of them. Parameter delimiter is a comma.
+Almost all API calls can handle multiple parameters. For instance, if you request
+information about a couple of blocks, you can send one API call for all of them. Parameter delimiter is a comma.
 
-So this method reduces HTTP calls, keeping your application fast.
+This method reduces HTTP calls, minimizing your application response time.
 
-*TODO - ALLOW CHAINS ALL ALL METHODS*
+#### Chaining
 
+Right now you can chain requests together for the following API methods:
 
+- ```block_info()```
+- ```block_transaction()```
+- ```block_transaction_raw()```
+- ```transaction()```
+- ```transaction_unconfirmed()```
+- ```address()```
+- ```address_balance()```
+
+Example (these all will work)
+
+```python
+# Get info about a single block (int)
+block_info(153)
+
+# Get info about a single block (string)
+block_info('153')
+
+# Get info about a multiple blocks (list int)
+block_info([153,253,353])
+
+# Get info about a multiple blocks (list string)
+block_info(['153','253','353'])
+
+# For the insane (list mixed)
+block_info([153,'253','353', 453])
+```
 
 #### Coin API
 
@@ -119,6 +147,6 @@ api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', 10)
 api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', '198aMn6ZYAczwrE5NvNTUMyJ5qkfy4g3Hi'], 10)
 ```
 
-###Read
+###RTFM
 
-Remeber to also check out the [Blockr docs](http://blockr.io/documentation/api)
+Remeber to also check out the [Blockr.io API docs](http://blockr.io/documentation/api)
