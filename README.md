@@ -5,7 +5,7 @@
 ###Hightlights
 
 - Support for Litecoin, Bitcoin, Digitalcoin, Quarkcoin, Peercoin, Megacoin
-- Simple and easy API, based on ```requests```
+- Simple and easy API, based on [requests](https://github.com/kennethreitz/requests).
 - New currencies can be added easily. (when available on the blockr. API)
 
 ###Requirements
@@ -20,7 +20,7 @@ Exchange rate API is currently BETA, but will provide usefull helper methods.
 
 ###Installation
 
-Clone the repository. (This might be a pip package one day).
+Clone the repository. (This will be a pip package one day in the future).
 
 ###Documentation
 
@@ -104,14 +104,12 @@ Get the current exchange rate. All exchange rates are based on the USD.
 exchange = coin.exchange_rate()
 ```
 
-*TODO - BUILD FORMATTER METHODS IN CORE API*
-
 #### Block API
 
 You can fetch information about a specific block, or multiple blocks at the
 same time.
 
-The variable passed in to the block pai function can be of:
+The variable passed in to the block API function can be of:
 
 - A block number (eg: ```223212```)
 - A block hash (eg: ```0000000000000000210b10d620600dc1cc2380bb58eb2408f9767eb792ed31fa```)
@@ -128,23 +126,40 @@ block_tx = coin.block_transaction(block)
 block_tx_raw = coin.block_transaction_raw(block)
 ```
 
-
 #### Transaction API
 
+Get information about transactions.
 
 ```python
 
+# Confirmed transaction data
 tx = transaction(transaction)
+
+# Unconfirmed transactions are not a part of the blockchain and should not be trusted!
+tx = transaction_unconfirmed(transaction)
 
 ```
 
-
 #### Address API
 
+Returns basic address data, date, block and transaction, when this address first appeared and last transaction data.
+
 ```python
-api.address('1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk')
-api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', 10)
-api.address(['1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk', '198aMn6ZYAczwrE5NvNTUMyJ5qkfy4g3Hi'], 10)
+# Get basic info about a specific address
+address = api.address('1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk')
+
+# Get the address current balance
+addr_balance = api.address_balance('1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk')
+
+# Get the address transactions (Only 200 most recent transactions)
+addr_tx = api.address_transactions('1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk')
+
+# Get the address unspent transactions.
+addr_tx_unspant = api.address_transactions_unspent('1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk')
+
+# Get the address unconfirmed transactions.
+addr_tx_unconf = api.address_transactions_unconfirmed('1L8meqhMTRpxasdGt8DHSJfscxgHHzvPgk')
+
 ```
 
 ###RTFM

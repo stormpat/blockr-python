@@ -5,6 +5,10 @@ from blockr.service import ApiService
 class TestApi(unittest.TestCase):
     """ Tests for the main Api class """
 
+    def root_url(self, func, expected):
+        """ Testing the root URI generation """
+        self.assertEqual(func, expected)
+
     def setUp(self):
         """
         Setting up a few diffrent currencies. Basically they all follow the
@@ -21,15 +25,15 @@ class TestApi(unittest.TestCase):
 
     def test_bitcoin_base_url_builder(self):
         """ Testing bitcoin root URI """
-        self.assertEqual(self.btc.build_url(), 'http://blockr.io/api/v1/')
+        self.root_url(self.btc.build_url(), 'http://blockr.io/api/v1/')
 
     def test_litecoin_base_url_builder(self):
         """ Testing litecoin root URI """
-        self.assertEqual(self.ltc.build_url(), 'http://ltc.blockr.io/api/v1/')
+        self.root_url(self.ltc.build_url(), 'http://ltc.blockr.io/api/v1/')
 
     def test_digitalcoin_base_url_builder(self):
         """ Testing digitalcoin root URI """
-        self.assertEqual(self.dgc.build_url(), 'http://dgc.blockr.io/api/v1/')
+        self.root_url(self.dgc.build_url(), 'http://dgc.blockr.io/api/v1/')
 
     def test_coin_info(self):
         """ Testing the coin info HTTP call """
