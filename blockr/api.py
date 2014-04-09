@@ -10,6 +10,7 @@ from service import ApiService
 
 class Api(ApiService):
     """ The main API class. Calls the Block API with HTTP GET requests. """
+    """ Test """
     def __init__(self, currency, data='json'):
         ApiService.__init__(self, currency)
         self.data = data
