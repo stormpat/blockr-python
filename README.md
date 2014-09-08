@@ -10,7 +10,7 @@
 
 ###Requirements
 
-- Python 2.7 only for now.
+- Python 2.7, 3.3, or 3.4.
 - [Requests](https://github.com/kennethreitz/requests)
 
 ###About

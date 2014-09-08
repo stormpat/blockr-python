@@ -5,8 +5,8 @@ ApiService class.
 """
 
 import requests as r
-import utils
-from service import ApiService
+from . import utils
+from .service import ApiService
 
 class Api(ApiService):
     """ The main API class. Calls the Block API with HTTP GET requests. """
