@@ -20,7 +20,10 @@ Exchange rate API is currently BETA, but will provide usefull helper methods.
 
 ###Installation
 
-Clone the repository. (This will be a pip package one day in the future).
+Clone the repository. (This will be a pip package one day in the future). Or use pip:
+```
+pip install git+https://github.com/stormpat/blockr-python.git
+```
 
 ###Documentation
 
